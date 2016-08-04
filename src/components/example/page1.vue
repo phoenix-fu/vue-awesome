@@ -1,14 +1,16 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <div>
-      <a v-link="'/'">home</a>
-      <a v-link="'/page/2'">page2</a>
-    </div>
-    <div>
-      <display></display>
-      <increment></increment>
-    </div>
+    <load-div>
+      <h1>{{ msg }}</h1>
+      <div>
+        <a v-link="'/'">home</a>
+        <a v-link="'/page/2'">page2</a>
+      </div>
+      <div>
+        <display></display>
+        <increment></increment>
+      </div>
+    </load-div>
   </div>
 </template>
 
@@ -24,6 +26,14 @@ export default {
       // preserves its current state and we are modifying
       // its initial state.
       msg: 'Page1'
+    }
+  },
+
+  route: {
+    data (transition) {
+      setTimeout(() => {
+        transition.next()
+      }, 2000)
     }
   },
 
