@@ -8,6 +8,10 @@
     <div class="tipsDiv">
       <button @click="showErrorTips">弹出统一错误提示</button>
     </div>
+    <div class="tipsDiv">
+      <button @click="showRootLoading">触发根的加载中</button>
+      <button @click="hideRootLoading">隐藏</button>
+    </div>
   </div>
 </template>
 
@@ -26,6 +30,14 @@ export default {
   methods: {
     showErrorTips () {
       this.$root.$broadcast('show-popup-error', '这是一个统一错误提示示例')
+    },
+
+    showRootLoading () {
+      this.$root.$broadcast('show-loading')
+    },
+
+    hideRootLoading () {
+      this.$root.$broadcast('hide-loading')
     }
   }
 }

@@ -40,6 +40,17 @@ export default {
     isShowMsg: function () {
       return this.message !== ''
     }
+  },
+
+  events: {
+    'show-loading': function (message = '加载中...') {
+      this.isShow = true
+      this.message = message
+    },
+
+    'hide-loading': function () {
+      this.isShow = false
+    }
   }
 }
 </script>

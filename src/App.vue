@@ -19,16 +19,19 @@
       <a href="https://github.com/vuejs/vue-router/" target="_blank">vue-router</a> for routing and
       <a href="https://github.com/vuejs/vuex/" target="_blank">vuex</a> for state management.
     </p>
+    <loading></loading>
     <popup-error></popup-error>
   </div>
 </template>
 
 <script>
 import store from 'src/vuex/store'
+import loading from 'components/common/loading'
 import popupError from 'components/common/popupError'
 
 export default {
   components: {
+    loading,
     popupError
   },
   store
