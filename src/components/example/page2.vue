@@ -5,6 +5,9 @@
       <a v-link="'/'">home</a>
       <a v-link="'/page/1'">page1</a>
     </div>
+    <div class="tipsDiv">
+      <button @click="showErrorTips">弹出统一错误提示</button>
+    </div>
   </div>
 </template>
 
@@ -18,6 +21,12 @@ export default {
       // its initial state.
       msg: 'Page2'
     }
+  },
+
+  methods: {
+    showErrorTips () {
+      this.$root.$broadcast('show-popup-error', '这是一个统一错误提示示例')
+    }
   }
 }
 </script>
@@ -26,5 +35,8 @@ export default {
 <style scoped>
 h1 {
   color: #42b983;
+}
+.tipsDiv {
+  margin-top: 15px
 }
 </style>
