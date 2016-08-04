@@ -1,4 +1,4 @@
-# my-test
+# vue-awesome
 
 > A Vue.js project
 
