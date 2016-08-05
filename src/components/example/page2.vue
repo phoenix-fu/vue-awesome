@@ -12,10 +12,15 @@
       <button @click="showRootLoading">触发根的加载中</button>
       <button @click="hideRootLoading">隐藏</button>
     </div>
+    <div class="tipsDiv">
+      <star :enabled="true"></star>
+    </div>
   </div>
 </template>
 
 <script>
+import star from 'components/common/star'
+
 export default {
   data () {
     return {
@@ -39,6 +44,10 @@ export default {
     hideRootLoading () {
       this.$root.$broadcast('hide-loading')
     }
+  },
+
+  components: {
+    star
   }
 }
 </script>
