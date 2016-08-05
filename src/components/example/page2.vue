@@ -13,17 +13,16 @@
       <button @click="hideRootLoading">隐藏</button>
     </div>
     <div class="tipsDiv">
-      <button @click="show = true">show modal</button>
-      <modal :show.sync="show">
-        <div>my test</div>
-        <div slot="footer"><button @click="show = false">ok</button></div>
-      </modal>
+      <button @click="show = true">show alert</button>
+      <alert :show.sync="show">
+        <div>my alert</div>
+      </alert>
     </div>
   </div>
 </template>
 
 <script>
-import modal from 'components/common/modal'
+import alert from 'components/common/alert'
 
 export default {
   data () {
@@ -52,7 +51,7 @@ export default {
   },
 
   components: {
-    modal
+    alert
   }
 }
 </script>
