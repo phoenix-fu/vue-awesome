@@ -13,13 +13,17 @@
       <button @click="hideRootLoading">隐藏</button>
     </div>
     <div class="tipsDiv">
-      <star :enabled="true"></star>
+      <button @click="show = true">show modal</button>
+      <modal :show.sync="show">
+        <div>my test</div>
+        <div slot="footer"><button @click="show = false">ok</button></div>
+      </modal>
     </div>
   </div>
 </template>
 
 <script>
-import star from 'components/common/star'
+import modal from 'components/common/modal'
 
 export default {
   data () {
@@ -28,7 +32,8 @@ export default {
       // with hot-reload because the reloaded component
       // preserves its current state and we are modifying
       // its initial state.
-      msg: 'Page2'
+      msg: 'Page2',
+      show: false
     }
   },
 
@@ -47,7 +52,7 @@ export default {
   },
 
   components: {
-    star
+    modal
   }
 }
 </script>
