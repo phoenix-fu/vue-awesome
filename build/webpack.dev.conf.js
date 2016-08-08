@@ -27,7 +27,10 @@ module.exports = merge(baseWebpackConfig, {
     new webpack.ProvidePlugin({
       "$": "jquery",
       "jQuery": "jquery",
-      "window.jQuery": "jquery"
+      "window.jQuery": "jquery",
+      "mixin": "web/vue-base/vue-mixin-part",
+      "$api": "web/common/jquery.request",
+      "apis": "src/bussiness/apis"
     }),
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
