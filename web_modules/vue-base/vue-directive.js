@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import common from 'web/common/common'
 
 export default function () {
   Vue.directive('disabled', function (value) {
@@ -31,6 +32,10 @@ export default function () {
     unbind: function () {
       this.el.removeEventListener('change', this.handler)
     }
+  })
+
+  Vue.directive('doc-title', function (value) {
+    common.setDocTitle(value)
   })
 
   Vue.directive('auto-resize', {

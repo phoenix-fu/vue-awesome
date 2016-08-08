@@ -38,15 +38,15 @@ export default {
 
   methods: {
     showErrorTips () {
-      this.$root.$broadcast('show-popup-error', '这是一个统一错误提示示例')
+      this.showPopupError('这是一个统一错误提示示例')
     },
 
     showRootLoading () {
-      this.$root.$broadcast('show-loading')
+      this.showLoading()
     },
 
     hideRootLoading () {
-      this.$root.$broadcast('hide-loading')
+      this.hideLoading()
     }
   },
 
