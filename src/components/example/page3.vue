@@ -1,11 +1,12 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <div>
-      <a v-link="'/page/1'">page1</a>
-      <a v-link="'/page/2'">page2</a>
-      <a v-link="'/page/3'">page3</a>
-    </div>
+    <load-div>
+      <h1>{{ nickname }}</h1>
+      <div>
+        <a v-link="'/'">home</a>
+        <a v-link="'/page/2'">page2</a>
+      </div>
+    </load-div>
   </div>
 </template>
 
@@ -17,7 +18,15 @@ export default {
       // with hot-reload because the reloaded component
       // preserves its current state and we are modifying
       // its initial state.
-      msg: 'Hello World!'
+      nickname: ''
+    }
+  },
+
+  route: {
+    data (transition) {
+      return this.request({ api: apis.user.view }).then(result => ({
+        nickname: result.data.nickname
+      }))
     }
   }
 }

@@ -27,12 +27,15 @@ export default function () {
                 })
             },
 
-            request (apis, { loadingText } = {}) {
+            request (apis, { loading = false, loadingText } = {}) {
                 if (typeof apis === 'object' && apis !== null && !Array.isArray(apis)) {
                     apis = [apis]
                 }
 
-                this.showLoading(loadingText)
+                if (loading) {
+                    this.showLoading(loadingText)
+                }
+
                 let requestApis = []
                 for (let api of apis) {
                     let requestApi = $api.getRequest(api.api, api.params, api.config)
@@ -41,8 +44,10 @@ export default function () {
                 return this.handleRequest($.when(...requestApis))
             },
 
-            handlePromise (deferred, { loadingText } = {}) {
-                this.showLoading(loadingText)
+            handlePromise (deferred, { loading = false, loadingText } = {}) {
+                if (loading) {
+                    this.showLoading(loadingText)
+                }
                 return this.handleRequest(deferred)
             },
 

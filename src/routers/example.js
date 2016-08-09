@@ -9,6 +9,9 @@ export default {
     },
     '/page/2': {
       component: resolve => require(['components/example/page2.vue'], resolve)
+    },
+    '/page/3': {
+      component: resolve => require(['components/example/page3.vue'], resolve)
     }
   }
 }

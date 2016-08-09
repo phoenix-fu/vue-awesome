@@ -17,6 +17,8 @@ module.exports = {
     // allow async-await
     'generator-star-spacing': 0,
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
+    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
+    //关闭未定义检查，因为会使用一些插件包的全局变量
+    "no-undef": 0
   }
 }
